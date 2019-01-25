@@ -1,0 +1,23 @@
+.Paginator
+    margin-top: 60px
+
+    position: relative
+
+    display: flex
+    justify-content: center
+    align-items: center
+
+.Paginator-Arrow
+    position: absolute
+
+    padding: 20px
+    cursor: pointer
+
+$offset: -40%
+
+.Paginator-Arrow_side_next
+    right: $offset
+
+.Paginator-Arrow_side_prev
+    transform: rotate(180deg)
+    left: $offset

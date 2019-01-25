@@ -26,5 +26,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@bem-react/classname": "^1.4.3",
+    "node-sass": "^4.11.0"
+  }
 }

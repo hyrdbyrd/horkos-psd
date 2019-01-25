@@ -1,0 +1,24 @@
+@import '../Inter.sass'
+
+.PaginatorItem
+    cursor: pointer
+
+    display: flex
+    justify-content: center
+    align-items: center
+
+    border: 1px solid $black
+
+    $size: 40px
+
+    width: $size
+    height: $size
+
+    background: $darkGray
+    color: $white
+
+    &:hover
+        background: $lightGray
+
+.PaginatorItem_active
+    color: $pink

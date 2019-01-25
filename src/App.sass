@@ -1,0 +1,74 @@
+@import './components/Inter.sass'
+
+::-webkit-scrollbar
+    width: 1px
+    height: 1px
+
+    background: $black
+
+::-webkit-scrollbar-thumb
+    background: $cyan
+
+.App
+    color: $white
+
+    max-width: 100vw
+    min-height: 100vh
+
+    overflow-x: hidden
+
+    background-color: #000000
+    background-image: url(images/bg.png)
+
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+.Container
+    border-box: box-sizing
+
+    width: 80%
+    margin: 0 auto
+
+.Link
+    color: $cyan
+
+    text-decoration: none
+
+.Link_decorated
+    &:hover
+        text-decoration: underline
+
+.Btn
+    +animate()
+
+    border-radius: 40px
+    cursor: pointer
+
+    font-size: 26px
+    font-weight: bold
+    text-align: center
+
+    width: 190px
+
+    padding: 20px
+
+.Btn_side_light
+    color: $cyan
+    box-shadow: inset 0 0 0 4px $cyan
+
+    &:hover
+        background: $cyan
+        box-shadow: inset 0 0 0 0 transparent
+        color: $black
+
+.Btn_side_dark
+    background: $pink
+    color: $white
+
+    &:hover
+        box-shadow: inset 0 0 0 4px $pink
+
+        color: $pink
+        background: $white

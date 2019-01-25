@@ -1,0 +1,111 @@
+@import '../Inter.sass'
+
+.Header
+    z-index: 1000
+
+    position: fixed
+
+    top: 0
+    left: 0
+
+    width: 100%
+
+    display: flex
+    justify-content: center
+
+.Header-Container
+    position: relative
+
+    display: flex
+    justify-content: space-around
+
+.Header-Nav
+    border-radius: 800px
+
+    +animate()
+
+    opacity: 0
+
+    width: 100vw
+    height: 100vh
+
+    position: fixed
+    top: 0
+    left: 0
+
+    transform: scale(0)
+
+    background-color: rgba(5, 231, 230, .1)
+
+    display: flex
+    justify-content: center
+    align-items: center
+
+.Header-NavItem
+    +animate()
+
+    background: $black
+
+    border: 2px solid $cyan
+    border-radius: 20px
+
+    padding: 20px
+
+    display: flex
+    justify-content: center
+    align-items: center
+
+    font-size: 36px
+
+    &:hover
+        background: rgba(0, 0, 0, 0)
+
+        transform: translate(-2px, -2px)
+
+        box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, .5)
+
+.Header-Nav_active
+    opacity: 1
+
+    border-radius: 0
+
+    transform: scale(1)
+
+.Burger
+    z-index: 100000
+
+    position: fixed
+
+    top: 20px
+    right: 20px
+
+    width: 40px
+
+    display: flex
+    flex-direction: column
+
+    &:before, &:after, .Burger-Inner
+        +animate()
+
+        content: ''
+        display: block
+
+        border-radius: 2px
+
+        width: 100%
+        height: 2px
+
+        background: $cyan
+
+    .Burger-Inner
+        margin: 10px 0
+
+.Burger_active
+    .Burger-Inner
+        opacity: 0
+
+    &:before
+        transform: translate(0, 12px) rotate(45deg)
+
+    &:after
+        transform: translate(0, -12px) rotate(-45deg)
