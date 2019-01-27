@@ -6,9 +6,9 @@
     display: flex
     flex-direction: column
 
-    width: 300px
+    width: 16.6em
 
-    margin: 0 20px
+    margin: 0 1.4em
 
 .Article-Preview
     box-sizing: border-box
@@ -18,11 +18,11 @@
     justify-content: center
     align-items: center
 
-    width: 300px
+    width: 16.6em
 
     &_type_text
         font-style: italic
-        padding: 20px
+        padding: 1.4em
 
     &_side_light
         background: $cyan
@@ -49,50 +49,12 @@
 .Article-Video
     width: 100%
 
-.Article-VideoBtnPlay
-    cursor: pointer
-
-    position: absolute
-
-    background: $darkGray
-
-    display: flex
-    justify-content: center
-    align-items: center
-
-    border-radius: 100%
-
-    $size: 60px
-    width: $size
-    height: $size
-
-    +animate()
-    opacity: .5
-
-    &:before
-        box-sizing: border-box
-
-        display: block
-        content: ''
-
-        $size: 20px
-        width: $size
-        height: $size
-
-        border: $size solid transparent
-        border-left-color: $yellow
-
-        transform: translate($size / 1.5)
-
-    &:hover
-        opacity: 1
-
 .Article-Title
-    font-size: 20px
+    font-size: 1.3em
     font-weight: bolder
     text-transform: uppercase
 
-    margin: 20px 0 10px
+    margin: 1em 0 .5em
 
     &_side_light
         color: $cyan

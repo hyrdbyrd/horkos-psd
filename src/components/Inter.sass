@@ -33,9 +33,12 @@ $noColor: rgba(0, 0, 0, 0)
     border-bottom: 4px solid $borderColor
 
 =btn($base, $diff, $type: 'fill')
+    border-size: .1em
+    border-style: solid
+
     @if $type == 'inset'
         color: $base
-        border: 4px solid $base
+        border-color: $base
 
         &:hover
             background: $base
@@ -43,7 +46,7 @@ $noColor: rgba(0, 0, 0, 0)
             color: $diff
     @else
         color: $diff
-        border: 4px solid transparent
+        border-color: transparent
 
         background: $base
 
