@@ -56,12 +56,11 @@ export default class App extends Component {
                     className='Articles'
                     id='Articles'
                     title='Articles'
-                    description='yep'
                 >
                     <Articles articles={[
-                        {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'light'},
-                        {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'light'},
-                        {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'dark'},
+                        {type: 'text', preview: 'Dark Vader - I\'m your fathe!\nLuke - ... NOOOOOOO...OOOO!! ...', description: 'Minus hand', title: 'Just a quote', side: 'dark'},
+                        {type: 'image', preview: yoda, description: 'We\'ve don\'t know. It is can be elph perhaph, or demon, but not goblin/goblin', title: 'Yoda is goblin or gnoblin?', side: 'light'},
+                        {type: 'video', preview: 'meme.mp4', description: 'Memes from star wars LOL!', title: 'Lorem ipsum dolor', side: 'neutrally'},
                         {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'dark'},
                         {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'light'},
                         {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'light'},
