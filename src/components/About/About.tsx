@@ -20,7 +20,7 @@ function About({title = 'Dark side', text = 'Lorem', idHref = '#', side = 'neutr
 
     return (
         <section className={cnAbout()}>
-            <div className={cnAbout('Container', {side}, ['Container'])}>
+            <div className={cnAbout('Container', {side})}>
                 <div className={cnAbout('PreTitle', {side})}>
                     About Us
                 </div>

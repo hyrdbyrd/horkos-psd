@@ -45,7 +45,7 @@ class Header extends Component<IHeaderProps, IHeaderState> {
 
         return (
             <header className={cnHeader()}>
-                <div className={cnHeader('Container', ['Container'])}>
+                <div className={cnHeader('Container')}>
                     <div className={cnBurger({active: isOpen, side})} onClick={toggle}>
                         <div className={cnBurger('Inner')} />
                     </div>
