@@ -37,7 +37,9 @@
 
     display: grid
 
-    grid-template-columns: repeat(3, min-content)
+    grid-template-columns: repeat(auto-fill, 238px)
+
+    grid-auto-columns: min-content
     grid-auto-rows: 78px
 
     grid-gap: 20px
@@ -55,7 +57,11 @@
 .Header-NavItem
     +animate()
 
-    font-size: 24px
+    font-size: 1.2em
+
+    display: flex
+    justify-content: center
+    align-items: center
 
     &:hover
         transform: translate(-2px, -2px)
