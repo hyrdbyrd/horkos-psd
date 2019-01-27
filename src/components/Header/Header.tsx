@@ -1,17 +1,21 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+
+import {IState} from '../../modules/default-state';
 
 import {cn} from '@bem-react/classname';
 import './Header.sass';
 
 interface IHeaderProps {
     items?: (string | JSX.Element)[];
+    side?: string;
 }
 
 interface IHeaderState {
     isOpen: boolean;
 }
 
-export default class Header extends Component<IHeaderProps, IHeaderState> {
+class Header extends Component<IHeaderProps, IHeaderState> {
     private cnHeader = cn('Header');
     private cnBurger = cn('Burger');
 
@@ -31,18 +35,18 @@ export default class Header extends Component<IHeaderProps, IHeaderState> {
 
     render() {
         const {cnHeader, cnBurger, onBugerClick} = this;
-        const {items = []} = this.props;
+        const {items = [], side = 'neutrally'} = this.props;
         const {isOpen} = this.state;
 
         return (
             <header className={cnHeader()}>
                 <div className={cnHeader('Container', ['Container'])}>
-                    <div className={cnBurger({active: isOpen})} onClick={onBugerClick}>
+                    <div className={cnBurger({active: isOpen, side})} onClick={onBugerClick}>
                         <div className={cnBurger('Inner')} />
                     </div>
-                    <nav className={cnHeader('Nav', {active: isOpen})}>
+                    <nav className={cnHeader('Nav', {active: isOpen, side})}>
                         {items.map((item, key) => (
-                            <div className={cnHeader('NavItem')} key={key}>
+                            <div className={cnHeader('NavItem', {side})} key={key}>
                                 {item}
                             </div>
                         ))}
@@ -52,3 +56,5 @@ export default class Header extends Component<IHeaderProps, IHeaderState> {
         );
     }
 }
+
+export default connect(({side}: IState) => ({side}))(Header);

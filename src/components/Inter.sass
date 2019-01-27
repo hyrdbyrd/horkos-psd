@@ -9,3 +9,22 @@ $noColor: rgba(0, 0, 0, 0)
 
 =animate($duration: .2s, $function: linear, $to: all)
     transition: $duration $function $to
+
+=btn($base, $diff, $type: 'fill')
+    @if $type == 'inset'
+        color: $base
+        box-shadow: inset 0 0 0 4px $base
+
+        &:hover
+            background: $base
+            box-shadow: inset 0 0 0 0 transparent
+            color: $diff
+    @else
+        background: $base
+        color: $diff
+
+        &:hover
+            box-shadow: inset 0 0 0 4px $base
+
+            color: $base
+            background: $diff

@@ -1,16 +1,14 @@
-import React, {Component} from "react";
+import React, {Component} from 'react';
 
 import Article, {IArticleProps} from './Article';
 import Paginator from '../Paginator/Paginator';
 
-import {cn} from "@bem-react/classname";
+import {cn} from '@bem-react/classname';
 
 import './Articles.sass';
 
 interface IArticlesProps {
     articles?: IArticleProps[];
-    description?: string;
-    title?: string;
 }
 
 interface IArticleState {
@@ -72,30 +70,20 @@ export default class Articles extends Component<IArticlesProps, IArticleState> {
     render() {
         const {cnArticles, slice} = this;
 
-        const {articles = [], title = 'Check out last articles', description = 'Lorem ipsum'} = this.props;
+        const {articles = []} = this.props;
         const {activePage} = this.state;
 
         const parts = this.createParts()[activePage];
 
         return (
-            <section className={cnArticles()}>
-                <div className={cnArticles('Container', ['Container'])}>
-                    <div className={cnArticles('Intro')}>
-                        <div className={cnArticles('Title')}>
-                            {title}
-                        </div>
-                        <div className={cnArticles('Description')}>
-                            {description}
-                        </div>
-                    </div>
-                    <div className={cnArticles('Content')}>
-                        {parts.map((article, key) => <Article {...article} key={key} />)}
-                    </div>
-                    <div className={cnArticles('Paginator')}>
-                        <Paginator length={Math.round(articles.length / slice)} handler={this.handler} />
-                    </div>
+            <>
+                <div className={cnArticles('Content')}>
+                    {parts.map((article, key) => <Article {...article} key={key} />)}
                 </div>
-            </section>
+                <div className={cnArticles('Paginator')}>
+                    <Paginator length={Math.round(articles.length / slice)} handler={this.handler} />
+                </div>
+            </>
         );
     }
 }

@@ -4,15 +4,16 @@ import {cn} from '@bem-react/classname';
 import './Article.sass';
 
 export interface IArticleProps {
-    type: 'video' | 'text' | 'image';
-    preview: JSX.Element | string;
+    side: 'light' | 'dark' | 'neutrally';
     description: string;
     title: string | JSX.Element;
+    preview: JSX.Element | string;
+    type: 'video' | 'text' | 'image';
 }
 
-export default function Article({type, preview, description, title}: IArticleProps) {
+export default function Article({type, preview, description, title, side}: IArticleProps) {
     const cnArticle = cn('Article');
-    const modify = {type};
+    const modify = {type, side};
 
     return (
         <div className={cnArticle(modify)}>

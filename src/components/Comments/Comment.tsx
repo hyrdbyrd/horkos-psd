@@ -4,7 +4,7 @@ import {cn} from '@bem-react/classname';
 import './Comment.sass';
 
 export interface ICommentProps {
-    side: 'light' | 'dark';
+    side: 'light' | 'dark' | 'neutrally';
     personName: string;
     imagePath?: string;
     from?: string;
@@ -13,18 +13,19 @@ export interface ICommentProps {
 
 export default function Comment({imagePath, quote, personName, side, from}: ICommentProps) {
     const cnComment = cn('Comment');
+    const modifier = {side};
 
     return (
         <div className={cnComment()}>
-            <img src={imagePath} className={cnComment('Image')} />
+            <img src={imagePath} className={cnComment('Image', modifier)} />
             <div className={cnComment('Content')}>
-                <div className={cnComment('Quote')}>
+                <i className={cnComment('Quote')}>
                     “{quote}”
-                </div>
-                <div className={cnComment('Author', {side})}>
-                    <span className={cnComment('Person', {side})}>
+                </i>
+                <div className={cnComment('Author', modifier)}>
+                    <b className={cnComment('Person', modifier)}>
                         {personName}
-                    </span>, {from}
+                    </b>, {from}
                 </div>
             </div>
         </div>

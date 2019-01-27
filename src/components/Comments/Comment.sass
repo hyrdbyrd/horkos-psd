@@ -8,16 +8,40 @@
 
     width: 45%
 
+=commentHover($color)
+    background: $color
+    border-color: $color
+    &:hover
+        box-shadow: 4px 4px 30px 2px $color
+
 .Comment-Image
-    background: $white
+    +animate()
 
     border-radius: 100%
+    border-size: 4px
+    border-style: solid
 
     margin: 0 20px 20px 0
 
     $size: 100px
+
     min-width: $size
     min-height: $size
+
+    width: $size
+    height: $size
+
+    object-fit: cover
+
+    &:hover
+        transform: translate(-4px, -4px)
+
+    &_side_dark
+        +commentHover($pink)
+    &_side_light
+        +commentHover($cyan)
+    &_side_neutrally
+        +commentHover($yellow)
 
 .Comment-Quote
     font-style: italic

@@ -2,6 +2,14 @@ import React, {Component} from 'react';
 
 import './App.sass';
 
+import yoda from './images/yoda.jpg';
+import obi from './images/obi.jpg';
+import vader from './images/vader.jpg';
+import sitius from './images/sitius.jpg';
+import boba from './images/boba.jpg';
+import jango from './images/jango.jpg';
+
+import Section from './components/Section/Section';
 import Header from './components/Header/Header';
 import Intro from './components/Intro/Intro';
 import Additional from './components/Additional/Additional';
@@ -25,30 +33,42 @@ export default class App extends Component {
         return (
             <main className={cnApp()}>
                 <Header items={[<a className='Link' href='/'>Main</a>]} />
-                <Intro idHref='#About' release='A long time ago in a galaxy far far away...' />
+                <Section className='Intro' title='Star Wars' description='A long time ago in a galaxy far far away' >
+                    <Intro idHref='#About' />
+                </Section>
                 <Additional title='Lorem ipsum dolor sit amet consectetur adipisicing elit.' />
-                <About idHref='#Comments' title='Dark side' text={lorem} />
-                <Articles articles={[
-                    { type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor' },
-                    { type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor' },
-                    { type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor' },
-                    { type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor' },
-                    { type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor' },
-                    { type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor' },
-                    { type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor' },
-                    { type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor' },
-                    { type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor' },
-                    { type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor' },
-                    { type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor' }
-                ]} />
-                <Statistic />
-                <Comments id='Comments' comments={[
-                    {side: 'light', personName: 'Yoda', from: 'jedi academy', quote: loremLess},
-                    {side: 'light', personName: 'Yoda', from: 'jedi academy', quote: loremLess},
-                    {side: 'dark', personName: 'Dark Veider', from: 'jedi academy', quote: loremLess},
-                    {side: 'dark', personName: 'Lord Sitius', from: 'jedi academy', quote: loremLess},
-                ]} />
-                <Choose />
+                <Section>
+                    <About idHref='#Comments' title='Dark side' text={lorem} />
+                </Section>
+                <Section title='Articles' description='yep'>
+                    <Articles articles={[
+                        {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'light'},
+                        {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'light'},
+                        {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'dark'},
+                        {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'dark'},
+                        {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'light'},
+                        {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'light'},
+                        {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'neutrally'},
+                        {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'neutrally'},
+                        {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'light'},
+                        {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'light'},
+                        {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'light'}
+                    ]} />
+                </Section>
+                <Section title='Stats' description='Lorem ipsum dolor sit amet' children={<Statistic />} />
+                <Section title='Comments' description='What about us  speaks' className='Comments' id='Comments'>
+                    <Comments comments={[
+                        { side: 'light', personName: 'Yoda', from: 'jedi academy', quote: loremLess, imagePath: yoda },
+                        { side: 'light', personName: 'Obivan', from: 'jedi academy', quote: loremLess, imagePath: obi },
+                        { side: 'neutrally', personName: 'Boba Fett', from: 'higher clone', quote: loremLess, imagePath: boba },
+                        { side: 'neutrally', personName: 'Jango Fett', from: 'higher clone', quote: loremLess, imagePath: jango },
+                        { side: 'dark', personName: 'Lord Vader', from: 'sith', quote: loremLess, imagePath: vader },
+                        { side: 'dark', personName: 'Lord Sitius', from: 'sith', quote: loremLess, imagePath: sitius },
+                    ]} />
+                </Section>
+                <Section title='Choose your side' description='...'>
+                    <Choose />
+                </Section>
             </main>
         )
     }

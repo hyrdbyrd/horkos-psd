@@ -1,5 +1,9 @@
-import React from "react";
-import {cn} from "@bem-react/classname";
+import React from 'react';
+import {connect} from 'react-redux';
+
+import {IState} from '../../modules/default-state';
+
+import {cn} from '@bem-react/classname';
 
 import './About.sass';
 
@@ -7,16 +11,17 @@ interface IAboutProps {
     title?: string | JSX.Element;
     text?: string | JSX.Element;
     idHref?: string;
+    side?: string;
 }
 
-export default function About({ title = 'Dark side', text = 'Sucks...', idHref = '#'}: IAboutProps) {
+function About({title = 'Dark side', text = 'Lorem', idHref = '#', side = 'neutrally'}: IAboutProps) {
     const cnAbout = cn('About');
     const cnBtn = cn('Btn');
 
     return (
         <section id='About' className={cnAbout()}>
-            <div className={cnAbout('Container', ['Container'])}>
-                <div className={cnAbout('PreTitle')}>
+            <div className={cnAbout('Container', {side}, ['Container'])}>
+                <div className={cnAbout('PreTitle', {side})}>
                     About Us
                 </div>
                 <div className={cnAbout('Title')}>
@@ -26,7 +31,7 @@ export default function About({ title = 'Dark side', text = 'Sucks...', idHref =
                     {text}
                 </div>
                 <a href={idHref} className={cnAbout('ReadMore', ['Link'])}>
-                    <div className={cnBtn({side: 'dark'})}>
+                    <div className={cnBtn({side})}>
                         Read More
                     </div>
                 </a>
@@ -34,3 +39,5 @@ export default function About({ title = 'Dark side', text = 'Sucks...', idHref =
         </section>
     );
 }
+
+export default connect(({side}: IState) => ({side}))(About);

@@ -55,20 +55,10 @@
     padding: 20px
 
 .Btn_side_light
-    color: $cyan
-    box-shadow: inset 0 0 0 4px $cyan
-
-    &:hover
-        background: $cyan
-        box-shadow: inset 0 0 0 0 transparent
-        color: $black
+    +btn($cyan, $black, 'inset')
 
 .Btn_side_dark
-    background: $pink
-    color: $white
+    +btn($pink, $white)
 
-    &:hover
-        box-shadow: inset 0 0 0 4px $pink
-
-        color: $pink
-        background: $white
+.Btn_side_neutrally
+    +btn($yellow, $black, 'inset')

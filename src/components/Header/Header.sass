@@ -58,8 +58,6 @@
     font-size: 36px
 
     &:hover
-        background: rgba(0, 0, 0, 0)
-
         transform: translate(-2px, -2px)
 
         box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, .5)
@@ -95,10 +93,20 @@
         width: 100%
         height: 2px
 
-        background: $cyan
-
     .Burger-Inner
         margin: 10px 0
+
+.Burger_side_neutrally
+    &:before, &:after, .Burger-Inner
+        background: $yellow
+
+.Burger_side_light
+    &:before, &:after, .Burger-Inner
+        background: $cyan
+
+.Burger_side_dark
+    &:before, &:after, .Burger-Inner
+        background: $pink
 
 .Burger_active
     .Burger-Inner

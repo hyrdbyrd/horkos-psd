@@ -5,12 +5,28 @@
 
     padding: 20px 0
 
-    background: $pink
-
-    color: $white
-
     font-weight: bold
 
     display: flex
     justify-content: center
     align-items: center
+
+    border-size: 4px
+    border-color: transparent
+
+    &_side_dark
+        background: $pink
+        color: $white
+
+        border-top: 4px solid $pink
+        border-bottom: 4px solid $pink
+    &_side_light
+        border-top: 4px solid $cyan
+        border-bottom: 4px solid $cyan
+
+        color: $cyan
+    &_side_neutrally
+        border-top: 4px solid $yellow
+        border-bottom: 4px solid $yellow
+
+        color: $yellow
