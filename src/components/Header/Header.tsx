@@ -51,7 +51,7 @@ class Header extends Component<IHeaderProps, IHeaderState> {
                     </div>
                     <nav onClick={toggle} className={cnHeader('Nav', {active: isOpen, side})}>
                         {items.map(({href, text}, key) => (
-                            <a href={href} className={cnHeader('NavItem', {side}, ['Link'])} key={key}>
+                            <a href={href} className={cnHeader('NavItem', {side}, ['Link', cn('Btn')({side})])} key={key}>
                                 {text}
                             </a>
                         ))}

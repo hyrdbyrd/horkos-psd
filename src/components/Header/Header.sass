@@ -20,7 +20,7 @@
     justify-content: space-around
 
 .Header-Nav
-    border-radius: 800px
+    border-radius: 100%
 
     +animate()
 
@@ -35,32 +35,37 @@
 
     transform: scale(0)
 
-    background-color: rgba(5, 231, 230, .1)
+    display: grid
 
-    display: flex
+    grid-template-columns: repeat(3, min-content)
+    grid-auto-rows: 78px
+
+    grid-gap: 20px
+
+    align-content: center
     justify-content: center
-    align-items: center
+
+    &_side_light
+        background-color: $cyanTrans
+    &_side_dark
+        background-color: $pinkTrans
+    &_side_neutrally
+        background-color: $yellowTrans
 
 .Header-NavItem
     +animate()
 
-    background: $black
-
-    border: 2px solid $cyan
-    border-radius: 20px
-
-    padding: 20px
-
-    display: flex
-    justify-content: center
-    align-items: center
-
-    font-size: 36px
+    font-size: 24px
 
     &:hover
         transform: translate(-2px, -2px)
 
         box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, .5)
+
+    &_side_light
+        background: $black
+    &_side_neutrally
+        background: $black
 
 .Header-Nav_active
     opacity: 1
@@ -96,16 +101,15 @@
     .Burger-Inner
         margin: 10px 0
 
-.Burger_side_neutrally
-    &:before, &:after, .Burger-Inner
-        background: $yellow
-
-.Burger_side_light
-    &:before, &:after, .Burger-Inner
-        background: $cyan
-.Burger_side_dark
-    &:before, &:after, .Burger-Inner
-        background: $pink
+    &_side_neutrally
+        &:before, &:after, .Burger-Inner
+            background: $yellow
+    &_side_light
+        &:before, &:after, .Burger-Inner
+            background: $cyan
+    &_side_dark
+        &:before, &:after, .Burger-Inner
+            background: $pink
 
 .Burger_active
     .Burger-Inner

@@ -1,8 +1,18 @@
 $black: #000000
+$blackTrans: rgba(0, 0, 0, .1)
+
 $cyan: #05e7e6
+$cyanTrans: rgba(5, 231, 230, .1)
+
 $yellow: #fff831
+$yellowTrans: rgba(255, 248, 49, .1)
+
 $pink: #e53663
+$pinkTrans: rgba(229, 54, 99, .1)
+
 $white: #ffffff
+$whiteTrans: rgba(255, 255, 255, .1)
+
 $lightGray: #4c4c4c
 $darkGray: #2e2e2e
 $noColor: rgba(0, 0, 0, 0)
@@ -25,18 +35,19 @@ $noColor: rgba(0, 0, 0, 0)
 =btn($base, $diff, $type: 'fill')
     @if $type == 'inset'
         color: $base
-        box-shadow: inset 0 0 0 4px $base
+        border: 4px solid $base
 
         &:hover
             background: $base
-            box-shadow: inset 0 0 0 0 transparent
+            border-color: transparent
             color: $diff
     @else
-        background: $base
         color: $diff
+        border: 4px solid transparent
+
+        background: $base
 
         &:hover
-            box-shadow: inset 0 0 0 4px $base
-
-            color: $base
             background: $diff
+            border-color: $base
+            color: $base
