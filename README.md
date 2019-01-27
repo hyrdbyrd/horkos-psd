@@ -2,7 +2,7 @@
 Just train my skills in React and TypeScript
 
 # Where can I try it
-(Published build)[https://hyrdbyrd.github.io/horkos-psd/build/]
+[Published build](https://hyrdbyrd.github.io/horkos-psd/build/)
 
 # How to run
 ```sh
@@ -13,4 +13,4 @@ npm start
 ```
 
 # What is build
-That (CRA)[https://github.com/facebook/create-react-app]
+That [CRA](https://github.com/facebook/create-react-app)
