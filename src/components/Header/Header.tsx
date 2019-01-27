@@ -7,7 +7,7 @@ import {cn} from '@bem-react/classname';
 import './Header.sass';
 
 interface IHeaderProps {
-    items?: (string | JSX.Element)[];
+    items?: {href: string, text: string}[];
     side?: string;
 }
 
@@ -30,7 +30,12 @@ class Header extends Component<IHeaderProps, IHeaderState> {
     }
 
     onBugerClick() {
-        this.setState(({isOpen}) => ({isOpen: !isOpen}));
+        this.setState(({isOpen}) => {
+            isOpen = !isOpen;
+            document.body.classList[isOpen ? 'add' : 'remove']('NoOverflow');
+
+            return {isOpen};
+        });
     }
 
     render() {
@@ -45,10 +50,10 @@ class Header extends Component<IHeaderProps, IHeaderState> {
                         <div className={cnBurger('Inner')} />
                     </div>
                     <nav className={cnHeader('Nav', {active: isOpen, side})}>
-                        {items.map((item, key) => (
-                            <div className={cnHeader('NavItem', {side})} key={key}>
-                                {item}
-                            </div>
+                        {items.map(({href, text}, key) => (
+                            <a href={href} className={cnHeader('NavItem', {side}, ['Link'])} key={key}>
+                                {text}
+                            </a>
                         ))}
                     </nav>
                 </div>

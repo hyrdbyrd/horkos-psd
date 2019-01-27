@@ -32,15 +32,22 @@ export default class App extends Component {
 
         return (
             <main className={cnApp()}>
-                <Header items={[<a className='Link' href='/'>Main</a>]} />
-                <Section className='Intro' title='Star Wars' description='A long time ago in a galaxy far far away' >
+                <Header items={[
+                    {href: '#', text: 'Menu'},
+                    {href: '#About', text: 'About'},
+                    {href: '#Articles', text: 'Articles'},
+                    {href: '#Stats', text: 'Stats'},
+                    {href: '#Comments', text: 'Comments'},
+                    {href: '#ChooseSide', text: 'Choose your side'},
+                ]} />
+                <Section className='Intro' title='Star Wars' description='A long time ago in a galaxy far far away...' >
                     <Intro idHref='#About' />
                 </Section>
                 <Additional title='Lorem ipsum dolor sit amet consectetur adipisicing elit.' />
                 <Section>
                     <About idHref='#Comments' title='Dark side' text={lorem} />
                 </Section>
-                <Section title='Articles' description='yep'>
+                <Section title='Articles' id='Articles' description='yep'>
                     <Articles articles={[
                         {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'light'},
                         {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'light'},
@@ -55,7 +62,9 @@ export default class App extends Component {
                         {type: 'text', preview: lorem, description: lorem, title: 'Lorem ipsum dolor', side: 'light'}
                     ]} />
                 </Section>
-                <Section title='Stats' description='Lorem ipsum dolor sit amet' children={<Statistic />} />
+                <Section title='Stats' id='Stats' description='Lorem ipsum dolor sit amet'>
+                    <Statistic />
+                </Section>
                 <Section title='Comments' description='What about us  speaks' className='Comments' id='Comments'>
                     <Comments comments={[
                         { side: 'light', personName: 'Yoda', from: 'jedi academy', quote: loremLess, imagePath: yoda },
@@ -66,7 +75,7 @@ export default class App extends Component {
                         { side: 'dark', personName: 'Lord Sitius', from: 'sith', quote: loremLess, imagePath: sitius },
                     ]} />
                 </Section>
-                <Section title='Choose your side' description='...'>
+                <Section title='Choose your side' id='ChooseSide'>
                     <Choose />
                 </Section>
             </main>
