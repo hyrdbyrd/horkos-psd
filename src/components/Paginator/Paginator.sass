@@ -21,3 +21,12 @@ $offset: -40%
 .Paginator-Arrow_side_prev
     transform: rotate(180deg)
     left: $offset
+
+@media (max-width: 410px)
+    .Paginator-Arrow
+        $offset: -25%
+
+        &_side_next
+            right: $offset
+        &_side_prev
+            left: $offset

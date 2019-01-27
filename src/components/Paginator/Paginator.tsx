@@ -54,13 +54,32 @@ export default class Paginator extends Component<IPaginatorProps, IPaginatorStat
         const hasPrev = activePage !== 0;
         const hasNext = activePage !== length - 1;
 
+        let startSlice = activePage - 1;
+        startSlice = startSlice < 0 ? 0 : startSlice;
+        let endSlice = activePage + 1;
+
+        const allTabs = new Array(length)
+            .fill(0)
+            .map((_, idx) => (
+                <PaginatorItem
+                    idx={idx}
+                    active={idx === activePage}
+                    className={cnPaginator('Item', {first: idx === 0, last: idx === length - 1})}
+                    handler={this.handler(idx)}
+                    key={idx}
+                />
+            ));
+
+        let tabs = [
+            startSlice ? allTabs[0] : null,
+            ...allTabs.slice(startSlice, endSlice + 1),
+            endSlice < length - 1 ? allTabs[length - 1] : null
+        ];
+
         return length > 0 && (
             <div className={cnPaginator()}>
                 {hasPrev && <Arrow className={cnPaginator('Arrow', {side: 'prev'})} handler={this.slideHandler(-1)} />}
-                {new Array(length)
-                    .fill(0)
-                    .map((_, idx) => <PaginatorItem idx={idx} active={idx === activePage} className={cnPaginator('Item')} handler={this.handler(idx)} key={idx} /> )
-                }
+                {tabs}
                 {hasNext && <Arrow className={cnPaginator('Arrow', {side: 'next'})} handler={this.slideHandler(1)} />}
             </div>
         );
