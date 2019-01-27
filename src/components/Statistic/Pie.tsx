@@ -21,7 +21,7 @@ function Pie({value, max = 500, description, side = 'neutrally'}: IPieProps) {
     return (
         <div className={cnPie()}>
             <div className={cnPie('Ellipse', modifier)}>
-                <div className={cnPie('Ellipse', {type: 'wrapper', ...modifier})}>
+                <div className={cnPie('Ellipse', {type: 'wrapper', side})}>
                     <div className={cnPie('Title', modifier)}>
                         <div className={cnPie('Value', modifier)}>
                             {value}

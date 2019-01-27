@@ -26,10 +26,10 @@ class Header extends Component<IHeaderProps, IHeaderState> {
     constructor(props: IHeaderProps) {
         super(props);
 
-        this.onBugerClick = this.onBugerClick.bind(this);
+        this.toggle = this.toggle.bind(this);
     }
 
-    onBugerClick() {
+    private toggle() {
         this.setState(({isOpen}) => {
             isOpen = !isOpen;
             document.body.classList[isOpen ? 'add' : 'remove']('NoOverflow');
@@ -39,17 +39,17 @@ class Header extends Component<IHeaderProps, IHeaderState> {
     }
 
     render() {
-        const {cnHeader, cnBurger, onBugerClick} = this;
+        const {cnHeader, cnBurger, toggle} = this;
         const {items = [], side = 'neutrally'} = this.props;
         const {isOpen} = this.state;
 
         return (
             <header className={cnHeader()}>
                 <div className={cnHeader('Container', ['Container'])}>
-                    <div className={cnBurger({active: isOpen, side})} onClick={onBugerClick}>
+                    <div className={cnBurger({active: isOpen, side})} onClick={toggle}>
                         <div className={cnBurger('Inner')} />
                     </div>
-                    <nav className={cnHeader('Nav', {active: isOpen, side})}>
+                    <nav onClick={toggle} className={cnHeader('Nav', {active: isOpen, side})}>
                         {items.map(({href, text}, key) => (
                             <a href={href} className={cnHeader('NavItem', {side}, ['Link'])} key={key}>
                                 {text}
