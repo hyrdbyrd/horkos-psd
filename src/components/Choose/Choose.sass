@@ -5,9 +5,23 @@
 
 .Choose-Btns
     display: flex
+    justify-content: center
+    align-items: center
+
     width: 150%
 
 .Choose-Btn
     margin: 0 1em
 
     width: 100%
+
+@media (max-width: 1150px)
+    .Choose-Btns
+        flex-direction: column
+
+    .Choose-Btn
+        margin: 1em
+
+@media (max-width: 450px)
+    .Choose-Btns
+        width: 100%
