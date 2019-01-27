@@ -90,12 +90,12 @@ export default class App extends Component {
                     description='What about us  speaks'
                 >
                     <Comments comments={[
-                        { side: 'light', personName: 'Yoda', from: 'jedi academy', quote: loremLess, imagePath: yoda },
-                        { side: 'light', personName: 'Obivan', from: 'jedi academy', quote: loremLess, imagePath: obi },
-                        { side: 'neutrally', personName: 'Boba Fett', from: 'higher clone', quote: loremLess, imagePath: boba },
-                        { side: 'neutrally', personName: 'Jango Fett', from: 'higher clone', quote: loremLess, imagePath: jango },
-                        { side: 'dark', personName: 'Lord Vader', from: 'sith', quote: loremLess, imagePath: vader },
-                        { side: 'dark', personName: 'Lord Sitius', from: 'sith', quote: loremLess, imagePath: sitius },
+                        {side: 'light', personName: 'Yoda', from: 'jedi academy', quote: 'Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering.', imagePath: yoda },
+                        {side: 'light', personName: 'Obi-Wan', from: 'jedi academy', quote: 'Only a Sith deals in absolutes.', imagePath: obi},
+                        {side: 'neutrally', personName: 'Boba Fett', from: 'higher clone', quote: 'He\'s no good to me dead', imagePath: boba},
+                        {side: 'neutrally', personName: 'Jango Fett', from: 'mercenary killer', quote: 'No one\'s ever lied to me twice.', imagePath: jango},
+                        {side: 'dark', personName: 'Darth Vader', from: 'sith', quote: 'The Force is strong with this one. Vader is commenting on the skills of an X-Wing pilot that is trying to blow up the Death Star, not realizing he’s trying to kill his own son.', imagePath: vader},
+                        {side: 'dark', personName: 'Darth Sitius', from: 'sith', quote: 'Everything is proceeding as I have foreseen.', imagePath: sitius},
                     ]} />
                 </Section>
                 <Section
