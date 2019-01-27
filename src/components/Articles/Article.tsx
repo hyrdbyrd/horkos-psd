@@ -15,12 +15,14 @@ export default function Article({type, preview, description, title, side}: IArti
     const cnArticle = cn('Article');
     const modify = {type, side};
 
-    let previewContent: string | JSX.Element = preview;
+    let previewContent: string | JSX.Element | undefined;
 
     if (type === 'image') {
         previewContent = <img src={preview} alt={preview} title={title} className={cnArticle('Image', modify)} />;
     } else if (type === 'video') {
         previewContent = <video controls src={preview} className={cnArticle('Video')} />;
+    } else if (type === 'text'){
+        previewContent = `“${preview}”`;
     }
 
     return (
