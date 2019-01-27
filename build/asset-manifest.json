@@ -1,0 +1,20 @@
+{
+  "main.css": "./static/css/main.c136b6d6.chunk.css",
+  "main.js": "./static/js/main.edaa3f19.chunk.js",
+  "main.js.map": "./static/js/main.edaa3f19.chunk.js.map",
+  "static/js/1.41334458.chunk.js": "./static/js/1.41334458.chunk.js",
+  "static/js/1.41334458.chunk.js.map": "./static/js/1.41334458.chunk.js.map",
+  "runtime~main.js": "./static/js/runtime~main.4a686d48.js",
+  "runtime~main.js.map": "./static/js/runtime~main.4a686d48.js.map",
+  "static/media/yoda.jpg": "./static/media/yoda.3ce4d14f.jpg",
+  "static/media/vader.jpg": "./static/media/vader.1001aa07.jpg",
+  "static/media/sitius.jpg": "./static/media/sitius.3252b35b.jpg",
+  "static/media/boba.jpg": "./static/media/boba.95d46740.jpg",
+  "static/media/jango.jpg": "./static/media/jango.253b0098.jpg",
+  "static/media/App.sass": "./static/media/bg.9652866b.png",
+  "static/media/obi.jpg": "./static/media/obi.a691668f.jpg",
+  "static/css/main.c136b6d6.chunk.css.map": "./static/css/main.c136b6d6.chunk.css.map",
+  "index.html": "./index.html",
+  "precache-manifest.499717139b73c6137480386b0d1cf3a3.js": "./precache-manifest.499717139b73c6137480386b0d1cf3a3.js",
+  "service-worker.js": "./service-worker.js"
+}
