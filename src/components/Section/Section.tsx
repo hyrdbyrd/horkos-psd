@@ -40,19 +40,23 @@ function Section({side, children, className = 'Section', id, title, description}
         </div>
     );
 
+    const introBlock = (description || title) && (
+        <div className={genClassName('Intro')}>
+            {titleBlock}
+            {descBlock}
+        </div>
+    );
+
+    const childrenBlock = children && (
+        <div className={genClassName('Container')}>
+            {children}
+        </div>
+    );
+
     return (
         <section id={id} className={genClassName()}>
-            {(description || title) && (
-                <div className={genClassName('Intro')}>
-                    {titleBlock}
-                    {descBlock}
-                </div>
-            )}
-            {children && (
-                <div className={genClassName('Container')}>
-                    {children}
-                </div>
-            )}
+            {introBlock}
+            {childrenBlock}
         </section>
     )
 }
