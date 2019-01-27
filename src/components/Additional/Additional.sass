@@ -15,18 +15,8 @@
     border-color: transparent
 
     &_side_dark
-        background: $pink
-        color: $white
-
-        border-top: 4px solid $pink
-        border-bottom: 4px solid $pink
+        +addity($pink, $white)
     &_side_light
-        border-top: 4px solid $cyan
-        border-bottom: 4px solid $cyan
-
-        color: $cyan
+        +addity(transparent, $cyan, 'bordered')
     &_side_neutrally
-        border-top: 4px solid $yellow
-        border-bottom: 4px solid $yellow
-
-        color: $yellow
+        +addity(transparent, $yellow, 'bordered')

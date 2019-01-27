@@ -10,6 +10,18 @@ $noColor: rgba(0, 0, 0, 0)
 =animate($duration: .2s, $function: linear, $to: all)
     transition: $duration $function $to
 
+=addity($base, $diff, $type: 'fill')
+    color: $diff
+
+    $borderColor: $base
+
+    @if $type == 'bordered'
+        $borderColor: $diff
+
+    background: $base
+    border-top: 4px solid $borderColor
+    border-bottom: 4px solid $borderColor
+
 =btn($base, $diff, $type: 'fill')
     @if $type == 'inset'
         color: $base

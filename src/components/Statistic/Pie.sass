@@ -9,8 +9,14 @@
 
 .Pie-Ellipse
     padding: 20px
-    border: 0.4px solid $cyan
     border-radius: 100%
+
+    &_side_light
+        border: 0.4px solid $cyan
+    &_side_dark
+        border: 0.4px solid $pink
+    &_side_neutrally
+        border: 0.4px solid $yellow
 
 .Pie-Ellipse_type_wrapper
     display: flex
@@ -26,11 +32,25 @@
     align-items: center
 
 .Pie-Value
-    color: $pink
-
     font-size: 32px
     font-weight: bolder
+    &_side_light
+        color: $cyan
+    &_side_dark
+        color: $pink
+    &_side_neutrally
+        color: $yellow
 
 .Pie-Description
     font-weight: bold
     text-transform: capitalize
+
+.Pie-Filled
+    transform-origin: 50% 50%
+    transform: rotate(64deg)
+    &_side_light
+        stroke: $cyan
+    &_side_dark
+        stroke: $pink
+    &_side_neutrally
+        stroke: $yellow

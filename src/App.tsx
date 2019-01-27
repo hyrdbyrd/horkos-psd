@@ -33,7 +33,7 @@ export default class App extends Component {
         return (
             <main className={cnApp()}>
                 <Header items={[
-                    {href: '#', text: 'Menu'},
+                    {href: '#', text: 'Main'},
                     {href: '#About', text: 'About'},
                     {href: '#Articles', text: 'Articles'},
                     {href: '#Stats', text: 'Stats'},
@@ -45,7 +45,7 @@ export default class App extends Component {
                 </Section>
                 <Additional title='Lorem ipsum dolor sit amet consectetur adipisicing elit.' />
                 <Section>
-                    <About idHref='#Comments' title='Dark side' text={lorem} />
+                    <About idHref='#Comments' title='Title' text={lorem} />
                 </Section>
                 <Section title='Articles' id='Articles' description='yep'>
                     <Articles articles={[
